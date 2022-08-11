@@ -1,0 +1,38 @@
+pinda:
+  swagger:
+    enabled: true
+    title: Shop-API接口文档
+    base-package: cn.malong.shopApi.controller
+    contact:
+      name: malong
+      email: 1289596706@qq.com
+  log:
+    enabled: true
+#    docket:
+#      user:
+#        base-package: cn.malong.shopApi.controller
+server:
+  port: 3000
+  servlet:
+    context-path: /api
+dozer:
+  mapping-files:
+    - classpath:dozer/biz.dozer.xml  #指定dozer的映射文件位置
+logging:
+  #在Spring Boot项目中默认加载类路径下的logback-spring.xml文件
+  config: classpath:logback-spring.xml
+spring:
+  profiles:
+    active: dev
+  datasource:
+    username: root
+    password: mysql0.0
+    url: jdbc:mysql://47.98.147.150:3306/shop-api?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+# JWT相关配置
+authentication:
+  user:
+    expire: 3600 #令牌失效时间
+    priKey: keys/pri.key #私钥
+    pubKey: keys/pub.key #公钥
