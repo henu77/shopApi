@@ -21,5 +21,6 @@ public class Menu {
     private String title;
     private int type;
     private String url;
+    private int sort;
     private List<Menu> children;
 }
